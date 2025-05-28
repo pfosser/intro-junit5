@@ -1,22 +1,25 @@
 package guru.springframework;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GreetingTest {
+	
+	private Greeting greeting;
+
+	@BeforeEach
+	void beforeEach() {
+		System.out.println("In before each...");
+		greeting = new Greeting();
+	}
 
 	@Test
 	void helloWorld() {
-		Greeting greeting = new Greeting();
-		
 		System.out.println(greeting.helloWorld());
 	}
 
 	@Test
 	void helloWorld1() {
-		Greeting greeting = new Greeting();
-		
 		System.out.println(greeting.helloWorld("Paolo"));
 	}
 
